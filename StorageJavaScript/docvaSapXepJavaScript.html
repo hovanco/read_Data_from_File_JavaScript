@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		// lay du lieu
+		fetch('HelloWold.txt')
+		  .then(response => response.text())
+		  .then(textFromFile => {
+		  	console.log(textFromFile);
+		  	// alert(text);
+
+		  	//sap xep
+		  	students = [];
+		  	var array = textFromFile.split("\n");
+		  	// console.log(array); 
+		  	for(let i = 0; i < array.length; i++){
+		  		let arrayItem = array[i].split(" ");
+		  		// console.log(arrayItem);
+		  		let student = {Name: arrayItem[0], score: arrayItem[1]};
+		  		students.push(student);
+		  	}
+		  	//console.log(students);
+
+		  	
+
+		 //  	for (var i = 0; i < students.length; i++) {
+			// 	for (var j = 0; j < students.length - 1; j++) {
+			// 		if (students[j].score < students[j + 1].score) {
+			// 			var tam = students[j].score;
+			// 			students[j].score = students[j+1].score;
+			// 			students[j+1].score = tam;
+			// 		}
+			// 	}
+			// }
+		 //    console.log(students);
+
+
+
+		    var score;
+	        for(var i = 0; i<students.length; i++){   
+	            for(var j =i+1; j<students.length; j++);
+	                if(students[i].score <students[j].score){
+	                    score = students[i].score;
+	                    students[i].score = students[j].score;
+	                    students[j].score = score;  
+	                     
+	                }
+
+	        }
+	        console.log(score);
+
+
+		  	//hien thi
+		  	// document.getElementById("data").innerHTML= students.replace(/\n/g,"<br/>");
+			})
+		  
+	</script>
+</head>
+<body>
+	<p id="data"></p>
+
+	<p>Vao Console de xem ket qua</p>
+</body>
+</html>
+

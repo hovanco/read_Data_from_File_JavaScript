@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title><p>Read file in JavaScript</p></title>
+	<p> Hien thi duoc gia tri trong file ra trang web</p>
+	<script type="text/javascript">
+		//lay ra
+		fetch('HelloWold.txt')
+		  .then(response => response.text())
+		  .then(text => {
+		  	console.log(text);
+		  	// alert(text); 
+		  	//hien thi
+		  	document.getElementById("data").innerHTML= text.replace(/\n/g,"<br/>"); //xuong dong tat ca
+		  })
+	</script>
+</head>
+<body>
+	<p id="data"></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lay du lieu -->
+	<!-- <script type="text/javascript">
+		fetch('file.txt')
+	.then(response => response.text())
+	.then(text => console.log(text))
+	// outputs the content of the text file
+	</script -->
+
+
+
+
+
+
+
+
+	<!-- students = [];
+		  	var array = textFromFile.split("\n");
+		  	console.log(array); // add Nam, Hoa, Lan from textFromFile in a new array.
+	
+		  	for(let i = 0; i < array.length; i++){
+		  		let arrayItem = array[i].split(" ");
+	
+		  		console.log(arrayItem);
+	
+		  		let student = {Name: arrayItem[0], Score: arrayItem[1] };
+		  		students.push(student);
+		  	}
+		  	console.log(students); -->
